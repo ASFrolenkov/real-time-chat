@@ -11,15 +11,15 @@ function App() {
 	const {auth} = useContext(Context)
     const [loading] = useAuthState(auth)
 
+	if (!loading) {
+		return <Loader/>
+	}
+
 	return (
-		loading ? 
-				<Loader/>
-				:
-				<BrowserRouter>
-					<Navbar/>
-					<AppRouter/>
-				</BrowserRouter>
-		
+		<BrowserRouter>
+			<Navbar/>
+			<AppRouter/>
+		</BrowserRouter>
 	);
 }
 
