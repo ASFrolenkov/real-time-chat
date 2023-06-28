@@ -9,6 +9,7 @@ import { Context } from '.';
 
 function App() {
 	const {auth} = useContext(Context)
+    // eslint-disable-next-line no-unused-vars
     const [user, loading] = useAuthState(auth)
 
 	if (loading) {
