@@ -9,9 +9,9 @@ import { Context } from '.';
 
 function App() {
 	const {auth} = useContext(Context)
-    const [loading] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
 
-	if (!loading) {
+	if (loading) {
 		return <Loader/>
 	}
 
